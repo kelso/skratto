@@ -1,0 +1,19 @@
+<h2>Odkaz</h2>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+
+    <p class="lead" style="margin: 0;">
+      <%= link_to short_url(@link.code), short_url(@link.code) %>
+    </p>
+  </div>
+
+  <div class="panel-footer">
+    Originálna URL:
+    <%= link_to @link.original_url %>
+  </div>
+</div>
+
+<p>
+  <%= link_to "Pokračovať na hlavnú stránku", root_path, class: 'btn btn-default' %>
+</p>

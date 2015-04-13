@@ -1,0 +1,26 @@
+<h2>Posledné linky</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th class="col-sm-5">URL</th>
+      <th class="col-sm-3">Skrátená URL</th>
+      <th class="col-sm-2">Počet otvorení</th>
+      <th class="col-sm-2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @links.each do |link| %>
+      <tr>
+        <td><%= link.original_url %></td>
+        <td><%= link_to short_url(link.code), short_url(link.code) %></td>
+        <td><%= link.visit_count %></td>
+        <td>
+          <%= link_to "Zobraziť", link %>
+          <%= link_to "Odstrániť", link, method: :delete, data: { confirm: "Určite?" } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

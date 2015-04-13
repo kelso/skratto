@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Skrat.to</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-sm-6">
+      <h1><%= link_to "Skráť.to", root_path %></h1>
+    </div>
+
+    <div class="col-sm-6 text-right" style="margin-top: 20px;">
+      <%= link_to "Chcem skrátiť link", new_link_path, class: 'btn btn-success' %>
+    </div>
+  </div>
+
+  <hr>
+
+  <%= content_tag :p, flash[:alert] if flash[:alert] %>
+
+  <%= yield %>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<div class="col-sm-6 col-sm-offset-3">
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      Skrátiť link
+    </div>
+
+    <div class="panel-body">
+
+      <%= form_for @link do |f| %>
+        <div class="form-group">
+          <%= f.label :original_url, "URL adresa" %>
+          <%= f.text_field :original_url, class: 'form-control' %>
+        </div>
+
+        <%= f.submit "Skrátiť link", class: 'btn btn-primary' %>
+      <% end %>
+
+    </div>
+  </div>
+
+</div>
